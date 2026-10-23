@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DH Money Solution – Home loans & finance consultants</title>
+<meta name="description" content="Compare home loans, loan against property, personal and business loans from top banks and NBFCs. Free consultation and a call back within an hour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f0;--surface:#ffffff;--ink:#1d2b24;--muted:#5d6b63;--brand:#1f4d3a;--brand2:#2e7a5a;--on:#ffffff;--accent:#ee6c4d;--line:#dcdfd6;--ok:#1d8a5b;--err:#c0392b}
+:root[data-theme="dark"]{--bg:#0e1713;--surface:#15231c;--ink:#ecf2ee;--muted:#a3b5aa;--brand:#6fcf9f;--brand2:#4fb283;--on:#08170f;--accent:#ff8a6b;--line:#27392f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:16px/1.65 "Nunito Sans","Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:68px 0}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;font-family:"Fraunces",Georgia,serif;font-weight:700}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+p{margin:0 0 1em;max-width:64ch}
+.lead{font-size:1.1rem;color:var(--muted)}
+.head{margin-bottom:32px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;height:66px}
+.logo{font-weight:800;text-decoration:none;color:var(--brand);letter-spacing:.02em}
+.logo b{color:var(--accent)}
+nav{display:flex;gap:6px}
+nav a{text-decoration:none;font-size:.93rem;color:var(--muted);padding:8px 10px;border-radius:8px}
+nav a:hover,nav a.on{color:var(--ink);background:var(--bg)}
+.btn{display:inline-block;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer;background:var(--brand);color:var(--on);text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.amber{background:var(--accent);color:#2a0f08}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
+.icon{background:none;border:1px solid var(--line);border-radius:10px;width:40px;height:40px;cursor:pointer;color:var(--ink);font-size:1.1rem}
+#menu{display:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hero{background:linear-gradient(160deg,var(--brand) 0%,#143528 100%);color:#fff;padding:72px 0}
+:root[data-theme="dark"] .hero{background:linear-gradient(160deg,#102a1f,#0a1b14)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.hero .lead{color:#dcebe3}
+.hero ul{list-style:none;padding:0;margin:22px 0}
+.hero li{padding-left:28px;position:relative;margin-bottom:8px}
+.hero li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}
+.stats div{font-size:.9rem;color:#d3e6dc}
+.stats b{display:block;font-size:1.8rem;color:#fff}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;color:var(--ink)}
+.form h3{margin-bottom:14px}
+label{display:block;font-weight:600;font-size:.88rem;margin:0 0 12px}
+input,select,textarea{width:100%;margin-top:5px;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;background:var(--bg);color:var(--ink)}
+input.bad{border-color:var(--err)}
+.msg{font-size:.8rem;color:var(--err);min-height:1em;font-weight:400}
+.check{display:flex;gap:10px;font-weight:400;align-items:flex-start}
+.check input{width:auto;margin-top:5px}
+.small{font-size:.84rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.loan h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:1.1rem}
+.rate{font-size:.8rem;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:2px 10px;white-space:nowrap}
+.loan .btn{margin-top:6px;padding:8px 14px;font-size:.88rem}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.steps .card{position:relative;padding-top:44px}
+.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:20px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#2a0f08;font-weight:800;display:grid;place-items:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+input[type=range]{padding:0;accent-color:var(--brand2)}
+.out{font-size:2.3rem;font-weight:800;color:var(--brand)}
+.row{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:8px 0}
+.donut{display:flex;align-items:center;gap:18px;margin:14px 0}
+.donut svg{width:120px;height:120px;transform:rotate(-90deg)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:20px;padding:7px 16px;cursor:pointer;font:inherit;font-size:.92rem}
+.tab[aria-selected=true]{background:var(--brand);color:var(--on);border-color:var(--brand)}
+.docs ul{margin:0;padding-left:20px}
+.docs li{margin-bottom:6px}
+.elig-res{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+.quote p{font-style:italic}
+.partners{display:flex;gap:12px;flex-wrap:wrap}
+.partners span{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 18px;font-weight:700;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted)}
+#q{max-width:420px;margin-bottom:12px}
+footer{background:#133324;color:#ecf2ee;padding:52px 0 90px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
+footer h4{margin:0 0 10px}
+footer a{display:block;text-decoration:none;opacity:.88;margin-bottom:5px}
+footer .logo{color:#fff}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;z-index:30}
+.fab a,.fab button{width:52px;height:52px;border-radius:50%;border:0;display:grid;place-items:center;text-decoration:none;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.fab .wa{background:#25d366;color:#fff}
+.fab .up{background:var(--surface);color:var(--ink);border:1px solid var(--line);display:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:10px;display:none;z-index:40}
+@media(max-width:860px){
+ .hero-grid,.two{grid-template-columns:1fr}
+ #menu{display:inline-block}
+ nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--surface);padding:12px 20px;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}
+ section{padding:48px 0}
+ .bar .btn.amber{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+header{flex:0 0 auto}
+.stage{flex:1 1 auto;position:relative;overflow:hidden}
+.track{display:flex;height:100%;width:100%;transition:transform .55s cubic-bezier(.65,.05,.25,1);will-change:transform}
+.slide{flex:0 0 100%;width:100%;height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-x:none}
+.slide-in{min-height:100%;display:flex;flex-direction:column}
+.slide-in>section,.slide-in>.wrap{width:100%}
+.slide-in section{padding:56px 0}
+.slide-in>.wrap{padding-block:56px}
+.slide-in .hero{padding:60px 0;flex:1}
+.slide .site-foot{margin-top:auto}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:15;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.arrow.l{left:12px}.arrow.r{right:12px}
+.arrow[disabled]{opacity:.3;cursor:default}
+.dots{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:8px;z-index:15;background:color-mix(in srgb,var(--surface) 88%,transparent);padding:8px 12px;border-radius:99px;border:1px solid var(--line)}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);padding:0;cursor:pointer}
+.dots button[aria-current=true]{background:var(--accent);width:24px;border-radius:6px}
+.fab{bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+.blk{padding:56px 0}
+@media(max-width:860px){.arrow{display:none}.blk{padding:40px 0}}
+@media(prefers-reduced-motion:reduce){.track{transition:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#home">DH <b>MONEY</b>SOLUTION</a>
+  <nav id="nav"><a href="#home" data-go="0">Home</a><a href="#about" data-go="1">About</a><a href="#loans" data-go="2">Loans</a><a href="#emi-calculator" data-go="3">EMI calculator</a><a href="#documents" data-go="4">Documents</a><a href="#faq" data-go="5">FAQ</a><a href="#contact" data-go="6" data-go="6">Contact</a></nav>
+  <div style="display:flex;gap:8px;align-items:center">
+   <button class="icon" id="theme" aria-label="Toggle dark mode">◐</button>
+   <a class="btn amber" href="#contact" data-go="6">Apply now</a>
+   <button class="icon" id="menu" aria-label="Open menu">☰</button>
+  </div>
+ </div>
+</header>
+<main style="display:contents"><div class="stage" id="stage">
+<button class="arrow l" id="prev" aria-label="Previous page">‹</button>
+<button class="arrow r" id="next" aria-label="Next page">›</button>
+<div class="track" id="track">
+<section class="slide" id="home" data-i="0" aria-label="Home" aria-hidden="false"><div class="slide-in"><div class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <h1>Tell us what you need. We call you within the hour.</h1>
+   <p class="lead">Share a few details about your loan. One of our managers will phone you, compare offers from several lenders and walk you through the best ones. There is no charge for this.</p>
+   <ul>
+    <li><b>Free advice.</b> We never charge for the consultation.</li>
+    <li><b>Enquiring is safe.</b> It does not touch your credit score.</li>
+    <li><b>Private by default.</b> Lenders see your details only after you say yes.</li>
+   </ul>
+   <div class="stats">
+    <div><b data-n="2500">0</b>families helped</div>
+    <div><b data-n="25">0</b>lending partners</div>
+    <div><b data-n="1">0</b>hour call-back</div>
+   </div>
+  </div>
+  <form class="card form" id="lead" novalidate>
+   <h3>Request a call back</h3>
+   <label>Full name<input name="name" autocomplete="name" required><span class="msg"></span></label>
+   <label>Mobile number<input name="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit number" autocomplete="tel" required><span class="msg"></span></label>
+   <label>City<input name="city" autocomplete="address-level2"></label>
+   <label>Loan type
+    <select name="type"><option>Home loan</option><option>Loan against property</option><option>Personal loan</option><option>Business loan</option><option>Car loan</option><option>Balance transfer</option></select>
+   </label>
+   <label>Loan amount (₹)<input name="amount" type="number" min="0" inputmode="numeric" placeholder="e.g. 2500000"></label>
+   <label>Best time to call
+    <select name="time"><option>Anytime</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+   </label>
+   <label class="check"><input type="checkbox" name="ok" required> <span>I agree to be contacted about my loan enquiry.</span></label>
+   <span class="msg" id="okmsg"></span>
+   <button class="btn" type="submit" style="width:100%">Request a call back</button>
+   <p class="small" style="margin:12px 0 0">Submitting opens WhatsApp with your details ready to send. Nothing is stored on this page.</p>
+  </form>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+<section class="slide" id="about" data-i="1" aria-label="About" aria-hidden="true"><div class="slide-in"><div class="blk">
+ <div class="wrap">
+  <div class="head"><h2>About DH Money Solution</h2>
+  <p class="lead">We are a loan consultancy. We do not lend money ourselves. We sit between you and the banks and NBFCs, compare offers, and handle the paperwork so you get a fair rate and a faster approval.</p></div>
+  <div class="grid">
+   <div class="card"><h3>Many lenders, one call</h3><p>We compare banks and NBFCs so you do not have to visit each one.</p></div>
+   <div class="card"><h3>Paperwork handled</h3><p>We check your documents before they go in, which avoids rejections and delays.</p></div>
+   <div class="card"><h3>Plain advice</h3><p>You see the rate, fees and EMI up front. No surprises after sanction.</p></div>
+   <div class="card"><h3>Support after sanction</h3><p>We follow up on disbursal and help with part-payment and balance-transfer later.</p></div>
+  </div>
+ </div>
+</div><div class="blk">
+ <div class="wrap">
+  <div class="head"><h2>Lenders we work with</h2><p class="lead">We compare offers across leading banks and NBFCs.</p></div>
+  <div class="partners"><span>Banks</span><span>NBFCs</span><span>Housing finance companies</span><span>Co-operative banks</span></div>
+ </div>
+</div><div class="alt blk">
+ <div class="wrap">
+  <div class="head"><h2>What customers say</h2></div>
+  <div class="grid">
+   <div class="card quote"><p>They compared three banks and got me a lower rate than I expected.</p><div class="small">Home loan customer</div></div>
+   <div class="card quote"><p>Clear on documents from day one, so there was no back and forth.</p><div class="small">Business loan customer</div></div>
+   <div class="card quote"><p>Balance transfer cut my EMI. They explained every charge first.</p><div class="small">Balance transfer customer</div></div>
+  </div>
+  <p class="small" style="margin-top:12px">Sample testimonials. Replace with your real customer reviews.</p>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+<section class="slide" id="loans" data-i="2" aria-label="Loans" aria-hidden="true"><div class="slide-in"><div class="alt blk">
+ <div class="wrap">
+  <div class="head"><h2>Loans we arrange</h2><p class="lead">Rates are indicative and depend on the lender, your profile and the property.</p></div>
+  <div class="grid" id="home-loan">
+   <div class="card loan"><h3>Home loan <span class="rate">from 8.35%</span></h3><p>Buy, build or extend a home with tenures up to 30 years.</p><button class="btn ghost" data-pick="Home loan">Apply</button></div>
+   <div class="card loan"><h3>Loan against property <span class="rate">from 9.5%</span></h3><p>Raise funds against your house, shop or land.</p><button class="btn ghost" data-pick="Loan against property">Apply</button></div>
+   <div class="card loan"><h3>Personal loan <span class="rate">from 10.5%</span></h3><p>Quick unsecured funds for weddings, medical needs or travel.</p><button class="btn ghost" data-pick="Personal loan">Apply</button></div>
+   <div class="card loan"><h3>Business loan <span class="rate">from 11%</span></h3><p>Working capital and expansion funding for traders and firms.</p><button class="btn ghost" data-pick="Business loan">Apply</button></div>
+   <div class="card loan"><h3>Car loan <span class="rate">from 8.7%</span></h3><p>New and used vehicle finance with flexible down payments.</p><button class="btn ghost" data-pick="Car loan">Apply</button></div>
+   <div class="card loan"><h3>Balance transfer <span class="rate">save on EMI</span></h3><p>Move your loan to a lower rate and cut your monthly outgo.</p><button class="btn ghost" data-pick="Balance transfer">Apply</button></div>
+  </div>
+ </div>
+</div><div class="blk">
+ <div class="wrap">
+  <div class="head"><h2>How it works</h2></div>
+  <div class="steps">
+   <div class="card"><h3>Share your need</h3><p>Fill the short form or message us on WhatsApp.</p></div>
+   <div class="card"><h3>We call you</h3><p>A manager reviews your profile and compares lenders.</p></div>
+   <div class="card"><h3>Submit documents</h3><p>We check and file them with the lender you choose.</p></div>
+   <div class="card"><h3>Get sanction</h3><p>We follow up until your loan is approved and disbursed.</p></div>
+  </div>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+<section class="slide" id="emi-calculator" data-i="3" aria-label="EMI calculator" aria-hidden="true"><div class="slide-in"><div class="alt blk">
+ <div class="wrap">
+  <div class="head"><h2>EMI calculator</h2></div>
+  <div class="two">
+   <div class="card">
+    <label>Loan amount: <b id="aV"></b><input id="a" type="range" min="100000" max="50000000" step="50000" value="2500000"></label>
+    <label>Interest rate (% per year): <b id="rV"></b><input id="r" type="range" min="6" max="24" step="0.05" value="8.5"></label>
+    <label>Tenure (years): <b id="tV"></b><input id="t" type="range" min="1" max="30" value="20"></label>
+   </div>
+   <div class="card">
+    <div class="small">Monthly EMI</div><div class="out" id="emi">–</div>
+    <div class="donut">
+     <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--accent)" stroke-width="5"/><circle id="arc" cx="18" cy="18" r="15.9" fill="none" stroke="var(--brand2)" stroke-width="5" stroke-dasharray="60 100"/></svg>
+     <div class="small"><div><span class="dot" style="background:var(--brand2)"></span>Principal</div><div><span class="dot" style="background:var(--accent)"></span>Interest</div></div>
+    </div>
+    <div class="row"><span>Principal</span><b id="p">–</b></div>
+    <div class="row"><span>Total interest</span><b id="i">–</b></div>
+    <div class="row"><span>Total payable</span><b id="tot">–</b></div>
+    <button class="btn amber" id="shareEmi" style="margin-top:14px">Get this loan quote</button>
+   </div>
+  </div>
+ </div>
+</div><div class="blk">
+ <div class="wrap">
+  <div class="head"><h2>Check your loan eligibility</h2><p class="lead">A rough estimate based on income and existing EMIs. Lenders decide the final amount.</p></div>
+  <div class="two">
+   <div class="card">
+    <label>Monthly income (₹)<input id="inc" type="number" inputmode="numeric" value="60000"></label>
+    <label>Existing monthly EMIs (₹)<input id="ex" type="number" inputmode="numeric" value="5000"></label>
+    <label>Tenure (years)<input id="et" type="number" min="1" max="30" value="20"></label>
+    <button class="btn" id="chk">Check eligibility</button>
+   </div>
+   <div class="card"><div class="small">Estimated eligible loan</div><div class="out" id="el">–</div>
+    <div class="elig-res small" id="elnote">Uses 50% of income as the maximum for all EMIs, at 8.5% interest.</div></div>
+  </div>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+<section class="slide" id="documents" data-i="4" aria-label="Documents" aria-hidden="true"><div class="slide-in"><div class="alt blk">
+ <div class="wrap">
+  <div class="head"><h2>Documents you will need</h2></div>
+  <div class="tabs" role="tablist" id="tabs">
+   <button class="tab" role="tab" aria-selected="true" data-t="sal">Salaried</button>
+   <button class="tab" role="tab" aria-selected="false" data-t="biz">Self-employed</button>
+   <button class="tab" role="tab" aria-selected="false" data-t="prop">Property</button>
+  </div>
+  <div class="card docs" id="docs"></div>
+  <p class="small" style="margin-top:12px">The exact list varies by lender. We confirm it with you on the call.</p>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+<section class="slide" id="faq" data-i="5" aria-label="FAQ" aria-hidden="true"><div class="slide-in"><div class="blk">
+ <div class="wrap">
+  <div class="head"><h2>Frequently asked questions</h2></div>
+  <input id="q" type="search" placeholder="Search questions" aria-label="Search FAQ">
+  <div id="faqs">
+   <details><summary>Do you charge a fee?</summary><p>Consultation is free. We will tell you about any lender charges before you apply.</p></details>
+   <details><summary>Will enquiring affect my credit score?</summary><p>No. We do not run a credit check just to enquire. A lender checks it only when you formally apply.</p></details>
+   <details><summary>How long does approval take?</summary><p>It depends on the lender and loan type. Personal loans can be quick. Home loans usually take a few days to a few weeks.</p></details>
+   <details><summary>Who lends the money?</summary><p>Banks and NBFCs. We are consultants and do not lend ourselves. All loans are subject to lender approval.</p></details>
+   <details><summary>Can I transfer my existing loan?</summary><p>Yes. If another lender offers a lower rate, a balance transfer can reduce your EMI. We compare the savings against the fees.</p></details>
+   <details><summary>What affects my interest rate?</summary><p>Your credit score, income, loan amount, tenure and the property or business profile.</p></details>
+  </div>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+<section class="slide" id="contact" data-i="6" aria-label="Contact" aria-hidden="true"><div class="slide-in"><div class="wrap" style="padding-block:60px">
+ <div class="head"><h2>Contact us</h2><p class="lead">Call or message us. We reply fast.</p></div>
+ <div class="grid">
+  <div class="card"><h3>Dharampal Singh</h3><p><a href="tel:+918302176777">+91 83021 76777</a></p><a class="btn" href="tel:+918302176777">Call now</a></div>
+  <div class="card"><h3>Harish Agarwal</h3><p><a href="tel:+919314595764">+91 93145 95764</a></p><a class="btn" href="tel:+919314595764">Call now</a></div>
+  <div class="card"><h3>WhatsApp</h3><p>Send us your loan details and we will get back to you.</p><a class="btn amber" href="https://wa.me/918302176777" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+ </div>
+</div><footer class="site-foot">
+ <div class="wrap cols">
+  <div><a class="logo" href="#home" style="font-size:1.1rem">DH MONEYSOLUTION</a>
+   <p class="small" style="color:#bfd3c7">Loan consultancy. We do not lend money ourselves. All loans are subject to lender approval, and rates shown are indicative.</p></div>
+  <div><h4>Loans</h4><a href="#loans">Home loan</a><a href="#loans">Loan against property</a><a href="#loans">Personal loan</a><a href="#loans">Business loan</a></div>
+  <div><h4>Company</h4><a href="#about">About</a><a href="#emi-calculator">EMI calculator</a><a href="#documents">Documents</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Call us</h4>
+   <a href="tel:+918302176777">Dharampal Singh +91 83021 76777</a>
+   <a href="tel:+919314595764">Harish Agarwal +91 93145 95764</a>
+   <a href="https://wa.me/918302176777" style="font-weight:600;margin-top:8px">Chat with us on WhatsApp</a></div>
+ </div>
+</footer></div></section>
+</div>
+<div class="dots" id="dots" role="tablist" aria-label="Pages"></div>
+</div></main>
+<div class="fab">
+ <button class="up" id="up" aria-label="Back to top">↑</button>
+ <a class="wa" href="https://wa.me/918302176777" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">✆</a>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=id=>document.getElementById(id),root=document.documentElement;
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const WA='918302176777';
+function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',3000)}
+
+// theme
+try{const s=localStorage.getItem('theme');if(s)root.dataset.theme=s;else if(matchMedia('(prefers-color-scheme: dark)').matches)root.dataset.theme='dark'}catch(e){}
+$('theme').onclick=()=>{const n=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}};
+
+// menu
+const nav=$('nav');$('menu').onclick=()=>nav.classList.toggle('open');nav.onclick=()=>nav.classList.remove('open');
+
+// scroll: back-to-top + active link
+const links=[...nav.querySelectorAll('a')];
+(()=>{const _noop=()=>{
+ $('up').style.display=scrollY>600?'grid':'none';
+ let cur='';document.querySelectorAll('main section[id]').forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s.id});
+ links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+};})();
+$('up').onclick=()=>{const sl=document.querySelector('.slide[aria-hidden=false]');if(sl)sl.scrollTo({top:0,behavior:'smooth'})};
+
+// counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
+ const el=e.target,n=+el.dataset.n,sfx=n>=25?'+':'';let v=0;const step=Math.max(1,Math.ceil(n/50));
+ const id=setInterval(()=>{v=Math.min(n,v+step);el.textContent=v.toLocaleString('en-IN')+(v===n?sfx:'');if(v===n)clearInterval(id)},30)}));
+document.querySelectorAll('[data-n]').forEach(e=>io.observe(e));
+
+// lead form
+const f=$('lead');
+function bad(el,m){el.classList.add('bad');el.parentElement.querySelector('.msg').textContent=m}
+function ok(el){el.classList.remove('bad');const m=el.parentElement.querySelector('.msg');if(m)m.textContent=''}
+f.addEventListener('submit',e=>{
+ e.preventDefault();let good=true;
+ const n=f.name,p=f.phone;
+ ok(n);ok(p);$('okmsg').textContent='';
+ if(n.value.trim().length<2){bad(n,'Enter your name.');good=false}
+ if(!/^[6-9]\d{9}$/.test(p.value.trim())){bad(p,'Enter a valid 10-digit mobile number.');good=false}
+ if(!f.ok.checked){$('okmsg').textContent='Please tick the consent box.';good=false}
+ if(!good)return;
+ const d=new FormData(f);
+ const msg=`Hello DH Money Solution, I need a call back.\nName: ${d.get('name')}\nPhone: ${d.get('phone')}\nCity: ${d.get('city')||'-'}\nLoan type: ${d.get('type')}\nAmount: ${d.get('amount')?inr(d.get('amount')):'not specified'}\nBest time: ${d.get('time')}`;
+ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+ toast('Opening WhatsApp with your details');
+});
+document.querySelectorAll('[data-pick]').forEach(b=>b.onclick=()=>{f.type.value=b.dataset.pick;go(0);setTimeout(()=>f.name.focus(),600)});
+
+// EMI
+function emiOf(P,R,Y){const m=R/1200,n=Y*12;return m?P*m*Math.pow(1+m,n)/(Math.pow(1+m,n)-1):P/n}
+function calc(){
+ const P=+$('a').value,R=+$('r').value,Y=+$('t').value,n=Y*12,e=emiOf(P,R,Y);
+ $('aV').textContent=inr(P);$('rV').textContent=R+'%';$('tV').textContent=Y;
+ $('emi').textContent=inr(e);$('p').textContent=inr(P);$('i').textContent=inr(e*n-P);$('tot').textContent=inr(e*n);
+ $('arc').setAttribute('stroke-dasharray',(P/(e*n)*100).toFixed(1)+' 100');
+}
+['a','r','t'].forEach(i=>$(i).addEventListener('input',calc));calc();
+$('shareEmi').onclick=()=>{
+ const msg=`Hello, I'd like a loan quote.\nAmount: ${inr($('a').value)}\nRate: ${$('r').value}%\nTenure: ${$('t').value} years\nEstimated EMI: ${$('emi').textContent}`;
+ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+};
+
+// eligibility (max EMI = 50% of income minus existing EMIs, at 8.5%)
+$('chk').onclick=()=>{
+ const inc=+$('inc').value,ex=+$('ex').value,Y=Math.min(30,Math.max(1,+$('et').value||20));
+ const room=inc*0.5-ex;
+ if(room<=0){$('el').textContent='Not eligible yet';$('elnote').textContent='Your existing EMIs already use most of your income. Reducing them can raise your eligibility.';return}
+ const m=8.5/1200,n=Y*12,loan=room*(Math.pow(1+m,n)-1)/(m*Math.pow(1+m,n));
+ $('el').textContent=inr(loan);
+ $('elnote').textContent=`You can service an EMI of about ${inr(room)}. Talk to us for exact lender-wise offers.`;
+};
+
+// documents tabs
+const D={
+ sal:['Identity proof: Aadhaar, PAN, passport or voter ID','Address proof: recent utility bill or rent agreement','Last 3 months’ salary slips','Last 6 months’ bank statements','Form 16 or last 2 years’ ITR','Passport-size photographs'],
+ biz:['Identity and address proof of owners','Last 2–3 years’ ITR with computation','Last 12 months’ bank statements','GST registration and returns','Business proof: licence, registration or partnership deed','Balance sheet and profit and loss account'],
+ prop:['Sale deed or title documents','Approved building plan','Property tax receipts','Encumbrance certificate','Builder agreement and payment receipts (new purchase)','Existing loan statement (balance transfer)']
+};
+function docs(k){$('docs').innerHTML='<ul>'+D[k].map(x=>'<li>'+x+'</li>').join('')+'</ul>'}
+docs('sal');
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));docs(t.dataset.t)});
+
+// FAQ search
+$('q').addEventListener('input',e=>{const v=e.target.value.toLowerCase();document.querySelectorAll('#faqs details').forEach(d=>d.style.display=d.textContent.toLowerCase().includes(v)?'':'none')});
+
+document.querySelectorAll('.slide').forEach(sl=>sl.addEventListener('scroll',()=>{$('up').style.display=sl.scrollTop>500?'grid':'none'},{passive:true}));
+
+// ---------- swipe pages ----------
+const track=$('track'),slides=[...document.querySelectorAll('.slide')],dotsBox=$('dots');
+let cur=0;
+const ids=slides.map(s=>s.id);
+slides.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Go to '+s.getAttribute('aria-label'));b.onclick=()=>go(i);dotsBox.appendChild(b)});
+function go(i,push=true){
+ i=Math.max(0,Math.min(slides.length-1,i));cur=i;
+ track.style.transform='translateX('+(-100*i)+'%)';
+ slides.forEach((s,k)=>{s.setAttribute('aria-hidden',k!==i);s.inert=k!==i});
+ [...dotsBox.children].forEach((d,k)=>d.setAttribute('aria-current',k===i));
+ document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',+a.dataset.go===i));
+ $('prev').disabled=i===0;$('next').disabled=i===slides.length-1;
+ slides[i].scrollTop=0;
+ if(push)history.replaceState(null,'','#'+ids[i]);
+ document.title=slides[i].getAttribute('aria-label')+' – DH Money Solution';
+}
+$('prev').onclick=()=>go(cur-1);$('next').onclick=()=>go(cur+1);
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(+a.dataset.go)}));
+document.querySelectorAll('a[href^="#"]:not([data-go])').forEach(a=>a.addEventListener('click',e=>{
+ const id=a.getAttribute('href').slice(1),i=ids.indexOf(id);if(i>-1){e.preventDefault();go(i)}}));
+// keyboard
+addEventListener('keydown',e=>{
+ if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))return;
+ if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+// touch swipe (horizontal only, so vertical scrolling still works)
+let sx=0,sy=0,t0=0,tracking=false;
+const stage=$('stage');
+stage.addEventListener('touchstart',e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;t0=Date.now();tracking=!e.target.closest('input[type=range],input,select,textarea')},{passive:true});
+stage.addEventListener('touchend',e=>{
+ if(!tracking)return;const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;
+ if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5&&Date.now()-t0<700)go(cur+(dx<0?1:-1));
+},{passive:true});
+// mouse drag/trackpad horizontal swipe
+let wheelLock=false;
+stage.addEventListener('wheel',e=>{
+ if(Math.abs(e.deltaX)>Math.abs(e.deltaY)&&Math.abs(e.deltaX)>40&&!wheelLock){wheelLock=true;go(cur+(e.deltaX>0?1:-1));setTimeout(()=>wheelLock=false,700)}
+},{passive:true});
+// open the right page from the link (#faq etc.)
+addEventListener('hashchange',()=>{const i=ids.indexOf(location.hash.slice(1));if(i>-1)go(i,false)});
+go(Math.max(0,ids.indexOf(location.hash.slice(1))),false);
+</script>
+</body>
+</html>
